@@ -1,5 +1,2 @@
-require "Stocks/version"
-
-module Stocks
-  # Your code goes here...
-end
+require_relative "./Stocks/version"
+require_relative './Stocks/cli'
