@@ -1,5 +1,6 @@
 
 class Stocks::CLI
+    attr_accessor :info
 
     def call
         show_indices
