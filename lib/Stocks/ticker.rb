@@ -1,21 +1,25 @@
 class Stocks::Ticker
 
-    attr_reader :symbol, :price, :price_change, :summary,
+    attr_accessor :name, :price, :price_change, :summary
 
-    def symbol
-        "aapl"
+    def initialize
+        @name = "Apple(aapl)"
+        @price = "184.96"
+        @price_change = "+.58%"
+        @summary = "Apple company's summary"
     end
 
-    def price
-        "185.39"
+    def show_info
+        puts self.name
+        puts self.price
+        puts self.price_change
+        puts self.summary
     end
 
-    def price_change
-        "+.81%"
-    end
+    def show_price
+        puts self.name
+        puts self.price
+        puts self.price_change
+    end 
 
-    def summary
-        "Apple Inc. designs, manufactures, and markets mobile communication and media devices, and personal computers to consumers, and small and mid-sized businesses."
-    end
-    
 end

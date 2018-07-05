@@ -8,7 +8,7 @@ class Stocks::CLI
     end
 
     def show_indices
-        Stocks::Indices.new.market_info 
+        Stocks::Indices.new.market_info
     end
 
     def show_trending
@@ -34,19 +34,12 @@ class Stocks::CLI
 
     def show_info
         # puts "ticker info"
-        ticker = Stocks::Ticker.new
-        puts "your info on #{ticker.symbol}"
-        puts "#{ticker.price}"
-        puts "#{ticker.price_change}"
-        puts "#{ticker.summary}"
+        Stocks::Ticker.new.show_info
     end
 
     def show_price
         # puts "ticker price"
-        ticker = Stocks::Ticker.new
-        puts "#{ticker.symbol}"
-        puts "#{ticker.price}"
-        puts "#{ticker.price_change}"
+        Stocks::Ticker.new.show_price
     end
 
 end
