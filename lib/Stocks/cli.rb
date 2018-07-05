@@ -38,11 +38,20 @@ class Stocks::CLI
     end
 
     def show_info
-        puts "ticker info"
+        # puts "ticker info"
+        ticker = Stocks::Ticker.new
+        puts "your info on #{ticker.symbol}"
+        puts "#{ticker.price}"
+        puts "#{ticker.price_change}"
+        puts "#{ticker.summary}"
     end
 
     def show_price
-        puts "ticker price"
+        # puts "ticker price"
+        ticker = Stocks::Ticker.new
+        puts "#{ticker.symbol}"
+        puts "#{ticker.price}"
+        puts "#{ticker.price_change}"
     end
 
 end
