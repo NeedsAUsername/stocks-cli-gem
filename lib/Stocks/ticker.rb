@@ -1,6 +1,6 @@
 class Stocks::Ticker
 
-    attr_accessor :html, :name, :price, :price_change, :summary
+    attr_accessor :html, :name, :price, :price_change, :info 
 
     def initialize #add symbol as parameter later
         @html = Nokogiri::HTML(open("https://finance.yahoo.com/quote/%5EGSPC"))
@@ -8,10 +8,10 @@ class Stocks::Ticker
     end
 
     def scrape
-        self.name = "name"
+        self.name = self.html.css("#quote-header-info h1").text
         self.price = self.html.css("#quote-header-info span")[1].text
         self.price_change = self.html.css("#quote-header-info span")[2].text
-        self.summary = "summary"
+        self.info = self.html.css("#quote-summary div")[1].text
     end
 
     def show_info
@@ -19,7 +19,7 @@ class Stocks::Ticker
         puts self.name
         puts self.price
         puts self.price_change
-        puts self.summary
+        puts self.info
     end
 
     def show_price
