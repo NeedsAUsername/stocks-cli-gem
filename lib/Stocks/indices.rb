@@ -19,6 +19,7 @@ class Stocks::Indices
 
     def market_info
         self.scraper
+        puts "Here is how the market is doing today"
         puts "S&P500: #{self.sp500.price}, #{self.sp500.price_change}"
         puts "DOW JONES: #{self.dow.price}, #{self.sp500.price_change}"
         puts "NASDAQ: #{self.nasdaq.price}, #{self.sp500.price_change}"

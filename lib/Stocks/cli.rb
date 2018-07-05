@@ -13,19 +13,21 @@ class Stocks::CLI
     end
 
     def show_trending
-        Stocks::Stocktwits.get_trending
+        Stocks::Stocktwits.show_trending
     end
 
     def menu
         puts "What ticker would you like info or price on?"
         input = nil
         while input != "exit"
-            puts "Type ticker-info for detailed info, and type ticker-price for price info, and type exit to exit."
+            puts "Type ticker-info for detailed info, ticker-price for price info, ticker-comments for stocktwits feed, or exit to exit."
             input = gets.strip
             if input.end_with?("-info")
                 show_info(input.gsub("-info", ""))
             elsif input.end_with?("-price")
                 show_price(input.gsub("-price", ""))
+            elsif input.end_with?("-feed")
+                show_comments(input.gsub("-feed", ""))
             elsif input == "exit"
                 puts "Exiting"
             else
@@ -41,5 +43,10 @@ class Stocks::CLI
     def show_price(ticker)
         Stocks::Ticker.new(ticker).show_price
     end
+
+    def show_comments(ticker)
+        Stocks::Stocktwits.new(ticker).show_comments
+    end
+
 
 end
