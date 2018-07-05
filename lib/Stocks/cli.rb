@@ -12,6 +12,7 @@ class Stocks::CLI
     end
 
     def show_trending
+        Stocks::Stocktwits.get_trending
     end
 
     def menu
