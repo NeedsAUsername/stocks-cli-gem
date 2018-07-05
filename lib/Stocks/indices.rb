@@ -1,9 +1,17 @@
 class Stocks::Indices
 
-    def market_info
-        puts "sp500: 2724.01"
-        puts "dow: 24275.67"
-        puts "nasdaq: 7525.91"
+    attr_accessor :sp500, :dow, :nasdaq
+
+    def initialize
+        @sp500 = "S&P500: 2717.11"
+        @dow = "Dow: 24188.31"
+        @nasdaq = "Nasdaq: 7513.84"
     end
 
+    def market_info
+        puts "Here is how the market is doing today"
+        puts self.sp500
+        puts self.dow
+        puts self.nasdaq
+    end
 end

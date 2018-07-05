@@ -8,14 +8,7 @@ class Stocks::CLI
     end
 
     def show_indices
-        puts "Here is how the market is doing today"
-        market = Stocks::Indices.new
-        market.market_info 
-        # puts <<-DOC.gsub /^\s*/, ''
-        #     1. SPY - 2713.22
-        #     2. DOW - 24,174.82
-        #     3. NASDAQ - 7,502.67
-        # DOC
+        Stocks::Indices.new.market_info 
     end
 
     def show_trending
