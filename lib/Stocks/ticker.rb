@@ -25,9 +25,12 @@ class Stocks::Ticker
 
     def show_price
         self.scrape
-        puts self.name
         puts self.price
         puts self.price_change
+    end
+
+    def self.test
+        puts "test"
     end
 
 end
