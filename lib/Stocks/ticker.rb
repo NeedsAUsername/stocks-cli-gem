@@ -1,6 +1,6 @@
 class Stocks::Ticker
 
-    attr_accessor :url, :html, :name, :price, :price_change, :info, :news, :links
+    attr_accessor :url, :html, :name, :price, :price_change, :news, :links
 
     def initialize(ticker)
         @url = "https://finance.yahoo.com/quote/#{ticker.upcase}"
