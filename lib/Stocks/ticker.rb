@@ -28,6 +28,10 @@ class Stocks::Ticker
             puts "#{index + 1}. #{title.text}"
             self.links << title.attribute("href").value
         end
+        self.view_news
+    end
+
+    def view_news
         puts "Do you want to view any of these articles? Type its number or else type no"
         input = nil
         while input != "no"
@@ -39,6 +43,7 @@ class Stocks::Ticker
             else puts "That is not a valid article."
             end
         end
+        self.links.clear
     end
 
 
