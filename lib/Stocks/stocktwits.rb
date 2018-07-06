@@ -1,6 +1,9 @@
 class Stocks::Stocktwits
 
+    attr_accessor :url
+
     def initialize(ticker)
+        @url = "https://stocktwits.com/symbol/#{ticker}"
     end
 
     def self.show_trending
