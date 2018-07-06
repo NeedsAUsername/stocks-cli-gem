@@ -13,17 +13,12 @@ class Stocks::Ticker
         self.name = self.html.css("#quote-header-info h1").text
         self.price = self.html.css("#quote-header-info span")[1].text
         self.price_change = self.html.css("#quote-header-info span")[2].text
-        self.info = self.html.css("#quote-summary div")[1].text
         self.news = self.html.css("#quoteNewsStream-0-Stream a")
     end
 
-    def show_info
+    def show_news
         self.scrape
-        puts self.name
-        puts self.price
-        puts self.price_change
-        puts self.info
-        puts "Latest News:"
+        puts "Latest News for #{self.name}:"
         self.news.each_with_index do |title, index|
             puts "#{index + 1}. #{title.text}"
             self.links << title.attribute("href").value
@@ -49,6 +44,7 @@ class Stocks::Ticker
 
     def show_price
         self.scrape
+        puts self.name
         puts self.price
         puts self.price_change
     end
