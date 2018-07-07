@@ -7,7 +7,12 @@ class Stocks::Stocktwits
     end
 
     def self.show_trending
-        puts "Trending on StockTwits: Apple(AAPL), Nividia(NVDA), Amazon(AMZN)"
+        # can't pull trending off of stocktwits website, so scraping an api
+        html = Nokogiri::HTML(open("https://api.stocktwits.com/api/2/trending/symbols.json"))
+        symbols = html.text.scan(/symbol":"\w\w.../)
+        puts "Trending on Stocktwits:"
+        puts symbols
+        # fix later to get just the tickers, and have them listed on one line
     end
 
     def show_comments
