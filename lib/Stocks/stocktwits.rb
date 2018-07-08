@@ -10,9 +10,11 @@ class Stocks::Stocktwits
         # can't pull trending off of stocktwits website, so scraping an api
         html = Nokogiri::HTML(open("https://api.stocktwits.com/api/2/trending/symbols.json"))
         symbols = html.text.scan(/symbol":"\w\w.../)
-        puts "Trending on Stocktwits:"
-        puts symbols
-        # fix later to get just the tickers, and have them listed on one line
+        message = "Trending on Stocktwits:"
+        symbols[0..5].each do |symbol|
+            message +=  " #{symbol.delete("symbol\":,")}"
+        end
+        puts message
     end
 
     def show_comments
