@@ -9,6 +9,7 @@ Gem::Specification.new do |s|
     s.email = "kevinchi118@gmail.com"
     s.files = ["lib/stocks-info.rb", "lib/stocks-info/cli.rb"]
     s.homepage = "http://rubygems.org/gems/stocks-info"
+    s.license = "MIT"
     s.executables << "stocks-info"
 
     s.add_development_dependency "bundler", "~> 1.16"
