@@ -1,4 +1,4 @@
-class Stocks::Ticker
+class StocksInfo::Ticker
 
     attr_accessor :url, :html, :name, :price, :price_change, :news, :links
 

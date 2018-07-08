@@ -1,4 +1,4 @@
-class Stocks::Stocktwits
+class StocksInfo::Stocktwits
 
     attr_accessor :url
 

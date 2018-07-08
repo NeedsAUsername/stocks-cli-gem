@@ -1,4 +1,4 @@
-class Stocks::Indices
+class StocksInfo::Indices
 
     attr_accessor :sp500, :dow, :nasdaq, :sp500_url, :dow_url, :nasdaq_url
 
@@ -9,11 +9,11 @@ class Stocks::Indices
     end
 
     def scraper
-        self.sp500 = Stocks::Ticker.new(self.sp500_url)
+        self.sp500 = StocksInfo::Ticker.new(self.sp500_url)
         self.sp500.scrape
-        self.dow = Stocks::Ticker.new(self.dow_url)
+        self.dow = StocksInfo::Ticker.new(self.dow_url)
         self.dow.scrape
-        self.nasdaq = Stocks::Ticker.new(self.nasdaq_url)
+        self.nasdaq = StocksInfo::Ticker.new(self.nasdaq_url)
         self.nasdaq.scrape
     end
 

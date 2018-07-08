@@ -1,5 +1,4 @@
-
-class Stocks::CLI
+class StocksInfo::CLI
     attr_accessor :info
 
     def call
@@ -9,11 +8,11 @@ class Stocks::CLI
     end
 
     def show_indices
-        Stocks::Indices.new.market_info
+        StocksInfo::Indices.new.market_info
     end
 
     def show_trending
-        Stocks::Stocktwits.show_trending
+        StocksInfo::Stocktwits.show_trending
     end
 
     def menu
@@ -37,15 +36,15 @@ class Stocks::CLI
     end
 
     def show_news(ticker)
-        Stocks::Ticker.new(ticker).show_news
+        StocksInfo::Ticker.new(ticker).show_news
     end
 
     def show_price(ticker)
-        Stocks::Ticker.new(ticker).show_price
+        StocksInfo::Ticker.new(ticker).show_price
     end
 
     def open_twits(ticker)
-        Stocks::Stocktwits.new(ticker).open_twits
+        StocksInfo::Stocktwits.new(ticker).open_twits
     end
 
 

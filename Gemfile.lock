@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    Stocks (0.1.0)
+    stocks-info (0.1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -13,10 +13,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  Stocks!
   bundler (~> 1.16)
   nokogiri
   rake (~> 10.0)
+  stocks-info!
 
 BUNDLED WITH
    1.16.2

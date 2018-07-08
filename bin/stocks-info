@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "stocks-info"
+
+StocksInfo::CLI.new.call
