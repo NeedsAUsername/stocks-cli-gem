@@ -49,8 +49,4 @@ class Stocks::Ticker
         puts self.price_change
     end
 
-    def self.test
-        puts "test"
-    end
-
 end
