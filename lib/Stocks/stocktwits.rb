@@ -17,8 +17,8 @@ class Stocks::Stocktwits
         puts message
     end
 
-    def show_comments
-        puts "comments here"
+    def open_twits
+        system("open #{self.url}")
     end
 
 end

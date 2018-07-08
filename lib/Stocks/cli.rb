@@ -20,14 +20,14 @@ class Stocks::CLI
         puts "What ticker would you like info or price on?"
         input = nil
         while input != "exit"
-            puts "Type ticker-news for latest news, ticker-price for price info, ticker-comments for stocktwits feed, or exit to exit."
+            puts "Type ticker-news for latest news, ticker-price for price info, ticker-twits to open stocktwits page, or exit to exit."
             input = gets.strip
             if input.end_with?("-news")
                 show_news(input.gsub("-news", ""))
             elsif input.end_with?("-price")
                 show_price(input.gsub("-price", ""))
-            elsif input.end_with?("-feed")
-                show_comments(input.gsub("-feed", ""))
+            elsif input.end_with?("-twits")
+                open_twits(input.gsub("-twits", ""))
             elsif input == "exit"
                 puts "Exiting"
             else
@@ -44,8 +44,8 @@ class Stocks::CLI
         Stocks::Ticker.new(ticker).show_price
     end
 
-    def show_comments(ticker)
-        Stocks::Stocktwits.new(ticker).show_comments
+    def open_twits(ticker)
+        Stocks::Stocktwits.new(ticker).open_twits
     end
 
 
