@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
 require "bundler/setup"
-require "stocks-info"
+require_relative "../lib/stocks-info"
 
-StocksInfo::CLI.new.call
+StocksInfo::CLI.new.start
