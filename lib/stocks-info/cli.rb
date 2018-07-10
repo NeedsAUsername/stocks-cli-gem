@@ -1,5 +1,4 @@
 class StocksInfo::CLI
-    attr_accessor :info
 
     def start
         show_indices
@@ -31,7 +30,9 @@ class StocksInfo::CLI
         while input != "exit"
             puts "Type ticker-news for latest news, ticker-price for price info, ticker-twits to open stocktwits page, or exit to exit. Ex: aapl-price"
             input = gets.strip
-            if input.end_with?("-news")
+            if !StocksInfo::Ticker.valid_ticker?("#{input.gsub("-news", "").gsub("-price", "")}")
+                puts "That is not a valid ticker."
+            elsif input.end_with?("-news")
                 show_news(StocksInfo::Ticker.new(input.gsub("-news", "")))
             elsif input.end_with?("-price")
                 show_price(StocksInfo::Ticker.new(input.gsub("-price", "")))
