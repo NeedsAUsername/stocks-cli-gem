@@ -4,21 +4,18 @@ class StocksInfo::Stocktwits
 
     def initialize(ticker)
         @url = "https://stocktwits.com/symbol/#{ticker}"
+        @trending_url = "https://api.stocktwits.com/api/2/trending/symbols.json"
+        @trending_tickers = []
     end
 
-    def self.show_trending
-        # can't pull trending off of stocktwits website, so scraping an api
-        html = Nokogiri::HTML(open("https://api.stocktwits.com/api/2/trending/symbols.json"))
-        symbols = html.text.scan(/symbol":"\w\w.../)
-        message = "Trending on Stocktwits:"
-        symbols[0..5].each do |symbol|
-            message +=  " #{symbol.delete("symbol\":,")}"
-        end
-        puts message
+    @@trending_url = "https://api.stocktwits.com/api/2/trending/symbols.json" #api page with trending data
+    @@trending_tickers = []
+
+    def self.trending_url
+        @@trending_url
     end
 
-    def open_twits
-        system("open #{self.url}")
+    def self.trending_tickers
+        @@trending_tickers
     end
-
 end

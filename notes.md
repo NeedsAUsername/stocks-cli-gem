@@ -7,4 +7,9 @@ CLI steps
     a. ticker-news for news info
     b. ticker-price for price info
     c. ticker-twits for stocktwits page  
-    
+
+
+
+
+
+to fix : crashes if stock doesnt exist.
