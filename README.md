@@ -2,13 +2,15 @@
 
 This gem provides Yahoo-Finance news headlines and price information for stocks.
 
-##Installation
+##  Gem Installation
 
-    $ gem install stocks-info
+    $ gem install stocks-info -v 0.2.4
 
 ##  Usage
 
     Include this code in your ruby file:
+
+    $ require 'stocks-info'
     $ StocksInfo::CLI.new.start
 
     Run the ruby file to start the CLI app. Main menu will display major indices, and trending StockTwits tickers.
