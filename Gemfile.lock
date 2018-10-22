@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    stocks-info (0.1.1)
+    stocks-info (0.2.0)
 
 GEM
   remote: https://rubygems.org/

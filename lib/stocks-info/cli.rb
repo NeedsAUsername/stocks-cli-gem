@@ -30,7 +30,9 @@ class StocksInfo::CLI
         while input != "exit"
             puts "Type ticker-news for latest news, ticker-price for price info, ticker-twits to open stocktwits page, or exit to exit. Ex: aapl-price"
             input = gets.strip
-            if !StocksInfo::Ticker.valid_ticker?("#{input.gsub("-news", "").gsub("-price", "")}")
+            if input == "exit"
+              puts "Exiting"
+            elsif !StocksInfo::Ticker.valid_ticker?("#{input.gsub("-news", "").gsub("-price", "")}")
                 puts "That is not a valid ticker."
             elsif input.end_with?("-news")
                 show_news(StocksInfo::Ticker.new(input.gsub("-news", "")))
@@ -38,8 +40,6 @@ class StocksInfo::CLI
                 show_price(StocksInfo::Ticker.new(input.gsub("-price", "")))
             elsif input.end_with?("-twits")
                 open_twits(input.gsub("-twits", ""))
-            elsif input == "exit"
-                puts "Exiting"
             else
                 puts "Try again."
             end
