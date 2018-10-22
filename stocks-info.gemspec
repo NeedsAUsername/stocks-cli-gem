@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
     s.description = "Gives yahoo finance news headlines, prices, and trending StockTwits."
     s.authors = ["Kevin Chi"]
     s.email = "kevinchi118@gmail.com"
-    s.files = ["lib/stocks-info.rb", "lib/stocks-info/cli.rb"]
+    s.files = ["lib/stocks-info.rb", "lib/stocks-info/cli.rb", "lib/stocks-info/scraper.rb", "lib/stocks-info/stocktwits.rb", "lib/stocks-info/ticker.rb", "lib/stocks-info/version.rb"]
     s.homepage = "http://rubygems.org/gems/stocks-info"
     s.license = "MIT"
     s.executables << "stocks-info"
