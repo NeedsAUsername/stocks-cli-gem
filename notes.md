@@ -10,6 +10,10 @@ CLI steps
 
 
 
+gem notes :
 
-
-to fix : crashes if stock doesnt exist.
+to update gem:
+  change version inside version.rb
+  run rake release
+  commit
+  run rake release 
