@@ -8,7 +8,10 @@ This gem provides Yahoo-Finance news headlines and price information for stocks.
 
 ##  Usage
 
-    Main menu will display major indices, and trending StockTwits tickers.
+    Include this code in your ruby file:
+    $ StocksInfo::CLI.new.start
+
+    Run the ruby file to start the CLI app. Main menu will display major indices, and trending StockTwits tickers.
     Type ticker-news for news info, ticker-price for price info, and ticker-twits to open its StockTwits page.
     Example: aapl-price
 
