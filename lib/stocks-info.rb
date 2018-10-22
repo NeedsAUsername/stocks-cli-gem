@@ -1,4 +1,4 @@
-require "nokogiri"
+require "nokogiri," ">= 1.7.2"
 require "open-uri"
 
 require_relative "stocks-info/version"
