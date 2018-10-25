@@ -4,10 +4,10 @@ This gem provides Yahoo-Finance news headlines and price information for stocks.
 
 ##  Gem Installation
 
-    $ gem install stocks-info -v 0.2.4
+    $ gem install stocks-info -v 0.2.5
 
     or include in your Gemfile:
-    gem 'stocks-info', '>= 0.2.4'
+    gem 'stocks-info', '>= 0.2.5'
 
 ##  Usage
 
