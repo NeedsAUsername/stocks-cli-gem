@@ -32,7 +32,7 @@ class StocksInfo::CLI
             input = gets.strip
             if input == "exit"
               puts "Exiting"
-            elsif !StocksInfo::Ticker.valid_ticker?("#{input.gsub("-news", "").gsub("-price", "")}")
+            elsif !StocksInfo::Ticker.valid_ticker?("#{input.gsub("-news", "").gsub("-price", "").gsub("-twits", "")}")
                 puts "That is not a valid ticker."
             elsif input.end_with?("-news")
                 show_news(StocksInfo::Ticker.new(input.gsub("-news", "")))
